@@ -1,4 +1,4 @@
-const Axios = require("Axios");
+const Axios = require("axios");
 
 const geocode = async (address, callback) => {
 	address = encodeURIComponent(address);
