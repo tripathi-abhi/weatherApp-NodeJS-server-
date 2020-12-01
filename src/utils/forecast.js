@@ -1,4 +1,4 @@
-const Axios = require("Axios");
+const Axios = require("axios");
 const api_key = "a1af5e122581fbde76be2179d9187c87";
 const forecast = async (lat, long, callback) => {
 	if (lat === undefined || long === undefined) {
