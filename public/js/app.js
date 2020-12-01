@@ -26,6 +26,7 @@ const fetchForecast = ({ address, errorTag, forecastTag }) => {
 					if (!data.error) {
 						errorTag.innerHTML = "";
 						forecastTag.innerHTML = `<span>${data.location}</span> <br /><br /> <span>${data.forecast}</span>`;
+						addressInput.value = "";
 					} else {
 						errorTag.innerHTML = data.error;
 					}
