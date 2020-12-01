@@ -16,6 +16,8 @@ const forecast = async (lat, long, callback) => {
 				description: data.current.weather[0].description,
 				temperature: Math.round((data.current.temp - 273) * 100) / 100,
 				humidity: data.current.humidity,
+				max_temp: Math.round((data.daily[0].temp.max - 273) * 100) / 100,
+				min_temp: Math.round((data.daily[0].temp.min - 273) * 100) / 100,
 			});
 		} catch (err) {
 			callback(err, undefined);

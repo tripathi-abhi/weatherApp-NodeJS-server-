@@ -68,7 +68,10 @@ app.get("/weather", (req, res) => {
 			forecast(
 				latitude,
 				longitude,
-				(error, { description, temperature, humidity } = {}) => {
+				(
+					error,
+					{ description, temperature, humidity, max_temp, min_temp } = {}
+				) => {
 					if (error) {
 						res.send({
 							error,
@@ -76,7 +79,7 @@ app.get("/weather", (req, res) => {
 					}
 
 					res.send({
-						forecast: `The place has ${description}. Temperature outside is ${temperature} deg C with humidity of ${humidity}`,
+						forecast: `The place has ${description}. Temperature outside is ${temperature} deg C with humidity of ${humidity}.\n\nThe maximum and minimum temperature will be ${max_temp} deg C and ${min_temp} deg C respectively!`,
 						location,
 						address: req.query.address,
 						Weather_description: description,
